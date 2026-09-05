@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Чертановский округ - 20 сентября 2026</title>
+<meta name="description" content="Чертановский округ - информационная страница к выборам 20 сентября 2026 года.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --background:#fafafa;
+  --foreground:#0a0a0a;
+  --muted:#737373;
+  --muted-2:#a3a3a3;
+  --card:#ffffff;
+  --border:#e5e5e5;
+  --border-strong:#d4d4d4;
+  --accent:#13bab3;
+  --accent-soft:#e8f8f7;
+  --accent-dark:#0b817c;
+  --red:#dc2626;
+  --red-soft:#fef2f2;
+  --green:#16a34a;
+  --green-soft:#f0fdf4;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 30px rgba(0,0,0,.035);
+  --radius:14px;
+  --max:1120px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(19,186,179,.10), transparent 34rem),
+    var(--background);
+  color:var(--foreground);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+button{font:inherit}
+img{max-width:100%;display:block}
+::selection{background:rgba(19,186,179,.2)}
+
+.container{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
+
+/* subtle grid / shadcn-like background */
+.page-bg{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.55;
+  background-image:
+    linear-gradient(rgba(0,0,0,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,0,0,.035) 1px,transparent 1px);
+  background-size:32px 32px;
+  mask-image:linear-gradient(to bottom,#000,transparent 80%);
+}
+
+/* NAV */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  height:64px;
+  border-bottom:1px solid rgba(229,229,229,.8);
+  background:rgba(250,250,250,.82);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.nav-inner{
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:-.02em;
+}
+.brand-mark{
+  width:28px;height:28px;
+  border:1px solid var(--border-strong);
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+  background:#fff;
+  box-shadow:0 1px 2px rgba(0,0,0,.04);
+}
+.brand-mark span{
+  width:10px;height:10px;border-radius:3px;background:var(--accent);
+}
+.nav-meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  height:30px;
+  padding:0 10px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+  color:#525252;
+  font-family:"JetBrains Mono",monospace;
+  font-size:10px;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+/* HERO */
+.hero{
+  padding:92px 0 58px;
+  text-align:center;
+}
+.hero-label{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 11px;
+  border:1px solid #d7efed;
+  border-radius:999px;
+  background:rgba(232,248,247,.75);
+  color:var(--accent-dark);
+  font-family:"JetBrains Mono",monospace;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.hero-label .dot{
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
+}
+.hero h1{
+  max-width:900px;
+  margin:24px auto 0;
+  font-size:clamp(38px,7vw,76px);
+  line-height:1.02;
+  letter-spacing:-.065em;
+  font-weight:800;
+}
+.tricolor {
+  background: linear-gradient(90deg, #fff 0 25%, #1687d9 43% 68%, #d51f2a 80% 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 0px #111;
+  text-shadow: 0 2px 8px rgba(0,0,0,.35);
+}
+.hero p{
+  max-width:680px;
+  margin:26px auto 0;
+  color:#666;
+  font-size:16px;
+}
+.hero-actions{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+.btn{
+  height:42px;
+  padding:0 17px;
+  border-radius:9px;
+  border:1px solid var(--border-strong);
+  background:#fff;
+  color:#171717;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  font-weight:600;
+  transition:.2s ease;
+  box-shadow:0 1px 2px rgba(0,0,0,.03);
+}
+.btn:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(0,0,0,.07)}
+.btn-primary{
+  color:#fff;
+  border-color:var(--foreground);
+  background:var(--foreground);
+}
+.btn-primary:hover{background:#262626}
+
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  background:rgba(255,255,255,.82);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  margin-bottom:70px;
+}
+.stat{
+  padding:20px 24px;
+  min-height:88px;
+}
+.stat+.stat{border-left:1px solid var(--border)}
+.stat-label{
+  color:var(--muted);
+  font-size:11px;
+  font-family:"JetBrains Mono",monospace;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+}
+.stat-value{
+  margin-top:4px;
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:-.025em;
+}
+
+/* SECTION HEAD */
+.section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:18px;
+}
+.kicker{
+  color:var(--muted);
+  font-family:"JetBrains Mono",monospace;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+.section-head h2{
+  margin:5px 0 0;
+  font-size:28px;
+  line-height:1.15;
+  letter-spacing:-.045em;
+}
+.section-head p{
+  margin:0;
+  max-width:430px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* BALLOTS */
+.ballots{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.card{
+  background:rgba(255,255,255,.92);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.ballot{
+  overflow:hidden;
+}
+.card-top{
+  padding:23px 24px 19px;
+  border-bottom:1px solid var(--border);
+}
+.card-top-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.card-number{
+  color:var(--muted);
+  font-family:"JetBrains Mono",monospace;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+.status{
+  font-size:10px;
+  font-weight:700;
+  padding:4px 8px;
+  border-radius:999px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+.status-red{background:var(--red-soft);color:#b91c1c}
+.status-green{background:var(--green-soft);color:#15803d}
+.card-top h3{
+  margin:13px 0 0;
+  font-size:21px;
+  line-height:1.2;
+  letter-spacing:-.035em;
+}
+.card-body{padding:20px 24px 24px}
+
+.pick{
+  display:flex;
+  gap:13px;
+  padding:15px;
+  border:1px solid var(--border);
+  border-radius:11px;
+  background:#fff;
+  margin-bottom:17px;
+  transition:.2s ease;
+}
+.pick:hover{border-color:#cfcfcf;box-shadow:0 5px 18px rgba(0,0,0,.04)}
+.checkbox{
+  flex:0 0 25px;
+  width:25px;height:25px;
+  border-radius:7px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+}
+.checkbox.teal{background:var(--accent)}
+.checkbox.red{background:#c0392b}
+.checkbox.green{background:var(--green)}
+.pick-title{
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:-.02em;
+}
+.party-tag{
+  display:inline-flex;
+  vertical-align:1px;
+  margin-right:7px;
+  padding:2px 6px;
+  border-radius:5px;
+  background:#f5f5f5;
+  border:1px solid var(--border);
+  color:#525252;
+  font-family:"JetBrains Mono",monospace;
+  font-size:9px;
+  font-weight:600;
+}
+.pick-sub{
+  margin-top:2px;
+  color:var(--muted);
+  font-size:12px;
+}
+.card-body p{
+  margin:0 0 11px;
+  color:#5f5f5f;
+  font-size:14px;
+}
+.card-body p:last-child{margin-bottom:0}
+.card-body strong{color:#171717}
+.callout{
+  margin:17px 0;
+  padding:13px 14px;
+  border:1px solid #cfecea;
+  border-radius:9px;
+  background:var(--accent-soft);
+  color:#27615f;
+  font-size:12px;
+  line-height:1.55;
+}
+.callout:before{
+  content:"NOTE";
+  display:block;
+  margin-bottom:5px;
+  color:var(--accent-dark);
+  font-family:"JetBrains Mono",monospace;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.06em;
+}
+
+/* BIO */
+.bio{margin-top:72px}
+.bio-card{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  overflow:hidden;
+}
+.bio-side{
+  padding:26px;
+  border-right:1px solid var(--border);
+  background:linear-gradient(145deg,#fafafa,#f3f3f3);
+}
+.big-number{
+  font-size:68px;
+  line-height:.95;
+  font-weight:800;
+  letter-spacing:-.07em;
+}
+.bio-side p{
+  margin:12px 0 0;
+  color:var(--muted);
+  font-size:12px;
+}
+.bio-main{padding:26px 28px}
+.bio-main h3{
+  margin:0 0 15px;
+  font-size:23px;
+  letter-spacing:-.04em;
+}
+.bio-facts{
+  list-style:none;
+  padding:0;margin:0 0 18px;
+  display:flex;flex-wrap:wrap;gap:7px;
+}
+.bio-facts li{
+  padding:5px 8px;
+  border:1px solid var(--border);
+  border-radius:7px;
+  background:#fff;
+  color:#666;
+  font-size:10px;
+}
+.bio-main p{
+  margin:0 0 10px;
+  color:#5f5f5f;
+  font-size:14px;
+}
+
+/* HOW */
+.how{margin-top:72px}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+.step{padding:24px}
+.step+.step{border-left:1px solid var(--border)}
+.step-num{
+  display:flex;
+  width:28px;height:28px;
+  align-items:center;justify-content:center;
+  border-radius:8px;
+  background:#f5f5f5;
+  border:1px solid var(--border);
+  font-family:"JetBrains Mono",monospace;
+  font-size:10px;
+  font-weight:600;
+}
+.step h4{
+  margin:16px 0 7px;
+  font-size:15px;
+  letter-spacing:-.02em;
+}
+.step p{margin:0;color:var(--muted);font-size:13px}
+
+/* FOOTER */
+footer{
+  margin-top:80px;
+  border-top:1px solid var(--border);
+  padding:32px 0 55px;
+}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:30px;
+}
+.footer-note{
+  max-width:760px;
+  color:#737373;
+  font-size:11px;
+  line-height:1.6;
+}
+.footer-date{
+  white-space:nowrap;
+  color:#a3a3a3;
+  font-family:"JetBrains Mono",monospace;
+  font-size:9px;
+  text-transform:uppercase;
+}
+
+/* reveal */
+.reveal{
+  opacity:0;
+  transform:translateY(12px);
+  animation:reveal .65s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.d1{animation-delay:.05s}.d2{animation-delay:.12s}.d3{animation-delay:.19s}
+@keyframes reveal{to{opacity:1;transform:none}}
+
+@media (max-width:850px){
+  .container{width:min(calc(100% - 28px),var(--max))}
+  .hero{padding:70px 0 45px}
+  .hero h1{font-size:clamp(38px,11vw,62px)}
+  .ballots{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .stat+.stat{border-left:0;border-top:1px solid var(--border)}
+  .bio-card{grid-template-columns:1fr}
+  .bio-side{border-right:0;border-bottom:1px solid var(--border)}
+  .steps{grid-template-columns:1fr}
+  .step+.step{border-left:0;border-top:1px solid var(--border)}
+  .footer-inner{flex-direction:column}
+}
+@media (max-width:520px){
+  .nav-meta .badge:first-child{display:none}
+  .hero h1{letter-spacing:-.055em}
+  .section-head{display:block}
+  .section-head p{margin-top:10px}
+  .card-top,.card-body,.bio-main,.bio-side,.step{padding-left:18px;padding-right:18px}
+  .hero-actions .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;animation:none}
+  .btn,.pick{transition:none}
+}
+</style>
+</head>
+
+<body>
+<div class="page-bg"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#">
+      <span class="brand-mark"><span></span></span>
+      <span>Чертановский округ</span>
+    </a>
+    <div class="nav-meta">
+      <span class="badge"><span class="badge-dot"></span> 20 сентября 2026</span>
+      <span class="badge">Москва</span>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero container reveal">
+    <span class="hero-label"><span class="dot"></span> cherry · 2026</span>
+    <h1>Россияне могут прожить без бензина,<br>а вот без <span class="tricolor">малой токмачки</span>..</h1>
+    <p>20 сентября вы получите на участке два разных бюллетеня - по партийному списку и по округу. Голоса в них не обязаны совпадать. Вот как проголосовать так, чтобы каждый из двух голосов сработал по-своему.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#ballots">К бюллетеням ↓</a>
+      <a class="btn" href="#how">Как это работает</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="stats reveal d1" aria-label="Краткая информация">
+      <div class="stat">
+        <div class="stat-label">Дата</div>
+        <div class="stat-value">20 сентября 2026</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Локация</div>
+        <div class="stat-value">Чертановский округ · Москва</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Бюллетени</div>
+        <div class="stat-value">2 шт </div>
+      </div>
+    </section>
+
+    <section id="ballots" class="reveal d2">
+      <div class="section-head">
+        <div>
+          <div class="kicker">01 · Ballots</div>
+          <h2>Два бюллетеня - две задачи</h2>
+        </div>
+        <p>Федеральный список и одномандатный округ оформлены как отдельные карточки, чтобы их было проще не перепутать.</p>
+      </div>
+
+      <div class="ballots">
+        <article class="card ballot">
+          <div class="card-top">
+            <div class="card-top-row">
+              <span class="card-number">Бюллетень № 1 · Федеральный список</span>
+              <span class="status status-red">список</span>
+            </div>
+            <h3>Голос против партии власти</h3>
+          </div>
+          <div class="card-body">
+            <div class="pick">
+              <div class="checkbox teal">✓</div>
+              <div>
+                <div class="pick-title"><span class="party-tag">НЛ</span>«Новые люди»</div>
+              </div>
+            </div>
+
+            <p><strong>Кремлёвская форточка.</strong></p>
+            <p>Поддерживаем именно их - они высказываются против блокировок и за защиту женщин, голосуют правда ЕдРо, как и другие партии. Их высказывания - уже хорошо, их конфликт с каналом "Соловьева Лайф" и их недовольство концертами Шамана - лучше чем ничего.</p>
+
+            <div class="callout">новые люди - лучший проект кремля, нужно поддержать их, ведь даже такая поддержка ставит власть в неловкое положение.</div>
+
+            <div class="pick">
+              <div class="checkbox red">✓</div>
+              <div>
+                <div class="pick-title"><span class="party-tag">КПРФ</span>КПРФ</div>
+              </div>
+            </div>
+
+            <p><strong>Сталинская оппозиция.</strong></p>
+            <p>Будем честны: КПРФ призывает национализировать чуть ли не полстраны и воевать «по-сталински» - это не либеральная и не мягкая программа. Но так или иначе это оппозиционная партия, и если от воздуханов вас тошнит - это ваш вариант в этом бюллетене.</p>
+          </div>
+        </article>
+
+        <article class="card ballot">
+          <div class="card-top">
+            <div class="card-top-row">
+              <span class="card-number">Бюллетень № 2 · Чертановский одномандатный округ</span>
+              <span class="status status-green">округ</span>
+            </div>
+            <h3>Одномандатник за мир</h3>
+          </div>
+          <div class="card-body">
+            <div class="pick">
+              <div class="checkbox green">✓</div>
+              <div>
+                <div class="pick-title"><span class="party-tag">ЯБЛ</span>Жилин Игорь Николаевич</div>
+                <div class="pick-sub">партия «Яблоко»</div>
+              </div>
+            </div>
+
+            <p>Тут всё просто: «Яблоко» - единственная парламентская партия, которая открыто выступает против войны, и большего от бюллетеня по округу сейчас и не надо.</p>
+            <p>Сам Игорь Николаевич - красавчик: 63 года, главный специалист АО «Российские космические системы», давно в «Яблоке», без театра и лишнего пафоса. Голосуем за человека, который за мир.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="bio reveal d3">
+      <div class="section-head">
+        <div>
+          <div class="kicker">02 · Candidate</div>
+          <h2>Кто такой Жилин</h2>
+        </div>
+      </div>
+
+      <div class="card bio-card">
+        <aside class="bio-side">
+          <div class="big-number">63</div>
+          <p>года · главный специалист АО «Российские космические системы»</p>
+        </aside>
+        <div class="bio-main">
+          <h3>Игорь Жилин</h3>
+          <ul class="bio-facts">
+            <li>красавчик </li>
+            <li>работает в космической отрасли</li>
+            <li>наш кандидат</li>
+            <li>яблоко</li>
+          </ul>
+          <p>Игорь Жилин - не технический кандидат и не медийный персонаж: обычный человек с многолетним стажем в «Российских космических системах», который решил пойти в политику от «Яблока» - партии, открыто выступающей против войны.</p>
+          <p>В Чертановском округе (Северное и Южное Бутово) он идёт как самостоятельный кандидат-одномандатник - то есть избирается не по списку, а лично, голосами конкретных жителей округа. Красавчик.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="how reveal">
+      <div class="section-head">
+        <div>
+          <div class="kicker">03 · Process</div>
+          <h2>Как физически проголосовать</h2>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h4>Возьмите оба бюллетеня</h4>
+          <p>На участке выдадут два листа: розовый/один - партийный список, второй - по округу. Это разные документы, заполняются независимо.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h4>В списке - «Новые люди»</h4>
+          <p>В бюллетене по федеральному списку ставим отметку напротив «Новые люди». Это голос-вычет из результата власти.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h4>В округе - Жилин</h4>
+          <p>В окружном бюллетене ищем фамилию «Жилин Игорь Николаевич» и отмечаем его. Это голос за конкретного человека.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <p class="footer-note">Это личная позиция и рекомендация, а не агитационный материал от чьего-либо штаба. Проверяйте свой избирательный участок и актуальные списки кандидатов на сайте ЦИК перед днём голосования.</p>
+    <div class="footer-date">20.09.2026 · Чертановский округ</div>
+  </div>
+</footer>
+</body>
+</html>
